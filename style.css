@@ -1,0 +1,157 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #1a1e29;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Press Start 2P', monospace, sans-serif;
+  color: #fff;
+}
+
+#game-container {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  height: 100%;
+  max-height: 750px;
+  background: #4ec0ca;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), 0 0 0 4px #2b303c;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 480px), (max-height: 750px) {
+  #game-container {
+    max-width: 100vw;
+    max-height: 100vh;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  cursor: pointer;
+}
+
+#ui-top-bar {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.icon-btn {
+  background: rgba(0, 0, 0, 0.45);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.15s ease;
+  backdrop-filter: blur(4px);
+  color: #fff;
+}
+
+.icon-btn:hover {
+  transform: scale(1.1);
+  background: rgba(0, 0, 0, 0.65);
+  border-color: #fff;
+}
+
+.icon-btn:active {
+  transform: scale(0.95);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  transition: opacity 0.2s ease;
+}
+
+.overlay.hidden {
+  display: none;
+  pointer-events: none;
+}
+
+.pause-box {
+  background: #ded895;
+  border: 4px solid #543847;
+  border-radius: 12px;
+  padding: 30px 24px;
+  text-align: center;
+  box-shadow: 0 8px 0 #543847, 0 12px 25px rgba(0, 0, 0, 0.5);
+  color: #543847;
+  max-width: 85%;
+}
+
+.pause-box h2 {
+  font-size: 18px;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+}
+
+.pause-box p {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 14px;
+  margin-bottom: 24px;
+  color: #634354;
+}
+
+.retro-btn {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 13px;
+  background: #e86101;
+  color: #fff;
+  border: 3px solid #fff;
+  outline: 3px solid #a33b00;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #a33b00;
+  transition: all 0.1s ease;
+}
+
+.retro-btn:hover {
+  background: #ff771a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #a33b00;
+}
+
+.retro-btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #a33b00;
+}
