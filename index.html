@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Flappy Bird - Retro Classic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐥</text></svg>">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="gameCanvas"></canvas>
+    
+    <!-- Top Bar Controls -->
+    <div id="ui-top-bar">
+      <button id="soundBtn" class="icon-btn" title="Toggle Sound">🔊</button>
+      <button id="themeBtn" class="icon-btn" title="Toggle Day/Night">☀️</button>
+      <button id="pauseBtn" class="icon-btn" title="Pause Game">⏸️</button>
+    </div>
+
+    <!-- Pause Overlay -->
+    <div id="pauseScreen" class="overlay hidden">
+      <div class="pause-box">
+        <h2>GAME PAUSED</h2>
+        <p>Press Space or Tap to Resume</p>
+        <button id="resumeBtn" class="retro-btn">RESUME</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="audio.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
